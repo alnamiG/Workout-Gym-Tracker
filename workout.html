@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Workouts</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<!-- Hamburger toggle (shown on mobile) -->
+<div class="hamburger" id="hamburger">&#9776;</div>
+<!-- Your Side Nav -->
+<nav class="side-nav" id="sideNav">
+  <img src="logo.png" alt="Gym Logo" class="nav-logo" />
+  <ul>
+    <li><a href="index.html">🏠 Home</a></li>
+    <li><a href="workout.html">💪 Workouts</a></li>
+    <li><a href="records.html">📋 Records</a></li>
+  </ul>
+</nav>
+
+<body class="workout-page">
+
+  <!-- Background Image -->
+  <div class="background-img" style="background-image: url('workout.jpg');"></div>
+
+  <!-- Page Overlay Content -->
+  <div class="overlay-form">
+    <h1>Select Your Workout Split</h1>
+
+    <!-- Dropdown menu -->
+    <div class="dropdown">
+     <button id="split-button" class="dropbtn">Choose a Split ⬇</button>
+      <div id="split-menu" class="dropdown-content">
+        <a href="#" data-split="Back">Back</a>
+        <a href="#" data-split="Chest">Chest</a>
+        <a href="#" data-split="Legs">Legs</a>
+        <a href="#" data-split="Shoulders">Shoulders</a>
+        <a href="#" data-split="Biceps">Biceps</a>
+        <a href="#" data-split="Triceps">Triceps</a>
+      </div>
+    </div>
+
+    <!-- Exercises + Save -->
+    <form id="workout-form">
+      <div id="exercise-list"></div>
+      <button type="submit" id="save-btn">Save Workout</button>
+    </form>
+
+    <!-- Save confirmation popup -->
+    <div id="popup" class="popup">✅ Workout saved!</div>
+  </div>
+
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="workout.js"></script>
+  <script type="module" src="navi.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Workout Records</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<!-- Hamburger toggle (shown on mobile) -->
+<div class="hamburger" id="hamburger">&#9776;</div>
+<!-- Your Side Nav -->
+<nav class="side-nav" id="sideNav">
+  <img src="logo.png" alt="Gym Logo" class="nav-logo" />
+  <ul>
+    <li><a href="index.html">🏠 Home</a></li>
+    <li><a href="workout.html">💪 Workouts</a></li>
+    <li><a href="records.html">📋 Records</a></li>
+  </ul>
+</nav>
+
+<body class="records-page">
+
+  <!-- Background image -->
+  <div class="background-img" style="background-image: url('Records.jpg');"></div>
+
+  <!-- Title -->
+<h1 class="records-title">Workout Records</h1>
+<div class="records-container" id="records-list"></div>
+<button id="delete-all-btn" class="delete-all-btn">Delete All Records</button>
+<div id="popup" class="popup">✅ Record deleted!</div>
+
+  
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="records.js"></script>
+  <script type="module" src="navi.js"></script>
+
+</body>
+</html>

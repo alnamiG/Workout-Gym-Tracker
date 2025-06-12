@@ -1,0 +1,352 @@
+/***************** GLOBAL STYLES ****************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,body {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+}
+
+/***************** HOME PAGE SLIDER ****************/
+.slider {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.show {
+  opacity: 1;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 10;
+  text-shadow: 2px 2px 8px #000;
+}
+
+.overlay-text h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.overlay-text p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.overlay-text .btn {
+  padding: 12px 24px;
+  background: #ff6347;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+
+/***************** WORKOUT PAGE ****************/
+.workout-page, .background-img {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.background-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: brightness(0.5);
+}
+
+.overlay-form {
+  color: white;
+  text-align: center;
+  padding: 40px;
+  max-width: 600px;
+  margin: 80px auto 0;
+}
+
+/* Dropdown menu */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.dropbtn {
+  background-color: #3498db;
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: white;
+  color: black;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  padding: 12px 16px;
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Workout buttons */
+#exercise-list {
+  margin-top: 40px;
+}
+
+#exercise-list button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 2px solid white;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#exercise-list button.selected {
+  background-color: orange;
+  border-color: orange;
+  color: white;
+}
+
+/* Save button */
+#save-btn {
+  padding: 12px 20px;
+  margin-top: 20px;
+  font-size: 16px;
+  background-color: #e67e22;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Popup confirmation */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #27ae60;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;         /* 🔥 Bigger font */
+  padding: 20px 40px;        /* 🔥 Bigger box */
+  border-radius: 10px;
+  text-align: center;
+  display: none;
+  z-index: 9999;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.popup.show {
+  display: block;
+}
+
+
+/* ========== RECORDS PAGE ========== */
+.records-page, .background-img.records-bg {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.records-title {
+  color: white;
+  font-size: 3.5rem;
+  text-align: center;
+  margin-top: 60px;
+  text-shadow: 2px 2px 8px #000;
+  padding-top: 100pt;
+}
+
+.records-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.record-card {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 15px 0;
+  font-size: 1rem;
+  position: relative;
+  transition: background-color 0.3s ease;
+  color: black;
+}
+
+.record-card:hover {
+  background-color: orange;
+  color: white;
+}
+
+.record-card .delete-btn {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ff4d4d;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-all-btn {
+  display: block;
+  margin: 40px auto 20px;
+  padding: 14px 30px;
+  font-size: 1rem;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/*Navi*/
+.side-nav {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 220px;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 1000;
+}
+
+.side-nav .nav-logo {
+  width: 100px;     /*logo*/
+  height: 100px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-left: 35px;
+}
+
+.side-nav h2 {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.side-nav ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  margin-top: 120%;
+}
+
+.side-nav ul li {
+  width: 100%;
+  margin-bottom: 40px; /* ✅ More space between buttons */
+}
+
+.side-nav ul li a {
+  display: block;
+  background-color: rgba(255, 165, 0, 0.5); /* Transparent orange */
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 22px; 
+  padding: 16px 20px;
+  border-radius: 8px;
+  text-align: left;
+  transition: background 0.3s ease;
+}
+
+.side-nav ul li a:hover {
+  background-color: rgba(255, 140, 0, 0.9);
+}
+
+/* Hamburger button */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 32px;
+  color: white;
+  z-index: 1100;
+  cursor: pointer;
+}
+
+/* Hide nav on small screens by default */
+@media screen and (max-width: 768px) {
+  .side-nav {
+    right: -220px; 
+    transition: right 0.3s ease;
+  }
+
+  .side-nav.active {
+    right: 0; 
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  body {
+    padding-right: 0;
+  }
+}

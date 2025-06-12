@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gym Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<!-- Hamburger toggle (shown on mobile) -->
+<div class="hamburger" id="hamburger">&#9776;</div>
+<!-- Your Side Nav -->
+<nav class="side-nav" id="sideNav">
+  <img src="logo.png" alt="Gym Logo" class="nav-logo" />
+  <ul>
+    <li><a href="index.html">🏠 Home</a></li>
+    <li><a href="workout.html">💪 Workouts</a></li>
+    <li><a href="records.html">📋 Records</a></li>
+  </ul>
+</nav>
+
+<body>
+  <!--Banner Fade for Home Page-->
+  <div class="slider fade">
+    <img src="Banner 1.jpg" class="slide show" />
+    <img src="Banner 2.jpg" class="slide" />
+    <img src="Banner 3.jpg" class="slide" />
+
+    <!--Overlay Text-->
+    <div class="overlay-text">
+      <h1>Gym Workout Tracker</h1>
+      <p>Track your progress. Stay consistent. Reach your goals.</p>
+      <a href="workout.html" class="btn">Get Started</a>
+    </div>
+  </div>
+
+  <script src="slider.js"></script>
+  <script type="module" src="navi.js"></script>
+
+</body>
+</html>
